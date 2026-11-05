@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vignesh R — MCA graduate, aspiring IT and cybersecurity professional. Explore projects, skills and education.">
+  <title>Vignesh R | IT & Cybersecurity Portfolio</title>
+  <style>
+    :root {
+      --bg: #090d18;
+      --surface: #111827;
+      --surface-2: #172235;
+      --text: #edf2ff;
+      --muted: #a8b4ca;
+      --accent: #67e8f9;
+      --accent-2: #a78bfa;
+      --line: rgba(185, 205, 240, .14);
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background:
+        radial-gradient(circle at 85% 8%, rgba(103,232,249,.10), transparent 25rem),
+        radial-gradient(circle at 8% 35%, rgba(167,139,250,.09), transparent 28rem),
+        var(--bg);
+      color: var(--text); font: 16px/1.65 Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px);
+      background: rgba(9,13,24,.82); border-bottom: 1px solid var(--line);
+    }
+    nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: .04em; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 22px; color: var(--muted); font-size: .92rem; }
+    .hero { padding: 104px 0 84px; display: grid; grid-template-columns: 1.45fr .75fr; gap: 48px; align-items: center; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 800; }
+    h1 { font-size: clamp(2.7rem, 7vw, 5rem); line-height: 1.06; letter-spacing: -.055em; margin: 16px 0; }
+    h1 span { color: var(--accent); }
+    .lead { color: var(--muted); font-size: 1.12rem; max-width: 650px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { padding: 11px 18px; border-radius: 10px; border: 1px solid var(--line); font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+    .btn.primary { background: var(--accent); color: #06121b; border-color: var(--accent); }
+    .btn:hover { transform: translateY(-2px); transition: .2s ease; }
+    .profile-card { background: linear-gradient(145deg, rgba(23,34,53,.95), rgba(17,24,39,.9)); border: 1px solid var(--line); border-radius: 22px; padding: 28px; box-shadow: 0 22px 70px rgba(0,0,0,.25); }
+    .monogram { width: 76px; height: 76px; display: grid; place-items: center; border-radius: 20px; background: linear-gradient(135deg,var(--accent),var(--accent-2)); color: #07111c; font-size: 1.7rem; font-weight: 900; }
+    .profile-card h2 { margin: 18px 0 4px; font-size: 1.35rem; }
+    .profile-card p { color: var(--muted); margin: 0; }
+    .quick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .tag { border: 1px solid var(--line); background: rgba(255,255,255,.035); color: #d8e4f7; border-radius: 999px; padding: 5px 10px; font-size: .8rem; }
+    section { padding: 58px 0; scroll-margin-top: 80px; }
+    .section-head { margin-bottom: 26px; }
+    .section-head .eyebrow { margin-bottom: 6px; }
+    h2.section-title { font-size: clamp(1.8rem,4vw,2.5rem); margin: 0; letter-spacing: -.035em; }
+    .section-desc { color: var(--muted); margin: 8px 0 0; max-width: 700px; }
+    .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .card { background: rgba(17,24,39,.88); border: 1px solid var(--line); border-radius: 16px; padding: 23px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.13rem; }
+    .card p { color: var(--muted); margin: 0; }
+    .card .tagrow { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 17px; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .skill-group h3 { color: var(--accent); font-size: .95rem; margin: 0 0 12px; }
+    .skill-group .tag { display: inline-block; margin: 0 5px 8px 0; }
+    .timeline { border-left: 1px solid var(--line); margin-left: 8px; padding-left: 24px; display: grid; gap: 22px; }
+    .timeline-item { position: relative; }
+    .timeline-item:before { content:""; position:absolute; left:-30px; top:8px; width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 5px rgba(103,232,249,.12); }
+    .meta { color: var(--accent); font-size: .84rem; font-weight: 700; }
+    .timeline-item h3 { margin: 3px 0; }
+    .timeline-item p { color: var(--muted); margin: 0; }
+    .contact-box { display: flex; justify-content: space-between; align-items: center; gap: 24px; background: linear-gradient(120deg,rgba(103,232,249,.10),rgba(167,139,250,.10)); border: 1px solid var(--line); border-radius: 20px; padding: 28px; }
+    .contact-box p { color: var(--muted); margin: 5px 0 0; }
+    footer { padding: 30px 0 42px; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); margin-top: 55px; }
+    @media (max-width: 760px) {
+      .navlinks { gap: 12px; font-size: .8rem; }
+      .hero { grid-template-columns: 1fr; padding: 72px 0 48px; gap: 28px; }
+      .profile-card { max-width: 460px; }
+      .skills-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      nav { align-items: flex-start; padding: 15px 0; flex-direction: column; }
+      .navlinks { width: 100%; overflow-x: auto; padding-bottom: 2px; }
+      .grid, .skills-grid { grid-template-columns: 1fr; }
+      .contact-box { align-items: flex-start; flex-direction: column; }
+      section { padding: 42px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">VIGNESH<span>.</span></a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div>
+        <div class="eyebrow">IT • Software • Cybersecurity</div>
+        <h1>Hi, I'm <span>Vignesh R.</span></h1>
+        <p class="lead">MCA graduate building a career across IT and cybersecurity. I enjoy learning new technologies, solving problems and applying technical knowledge through practical projects.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="monogram">VR</div>
+        <h2>Aspiring IT & Cybersecurity Professional</h2>
+        <p>Chennai, Tamil Nadu, India</p>
+        <div class="quick">
+          <span class="tag">MCA Graduate</span><span class="tag">ADCD – In Progress</span><span class="tag">ML Projects</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="wrap" id="about">
+      <div class="section-head"><div class="eyebrow">Introduction</div><h2 class="section-title">About me</h2></div>
+      <p class="section-desc">I completed my Master of Computer Applications and have a foundation in programming, web technologies and machine learning. I am currently pursuing the ADCD cybersecurity course at Red Team Academy, Chennai, to develop practical knowledge in networking, vulnerability assessment and security testing. I am open to entry-level opportunities in IT, software and cybersecurity.</p>
+    </section>
+
+    <section class="wrap" id="skills">
+      <div class="section-head"><div class="eyebrow">What I work with</div><h2 class="section-title">Technical skills</h2><p class="section-desc">A snapshot of technologies and areas I have studied or practised. I can discuss my current level and project experience during an interview.</p></div>
+      <div class="skills-grid">
+        <article class="card skill-group"><h3>Programming & Web</h3><span class="tag">Python (Basics)</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SQL</span><span class="tag">.NET</span></article>
+        <article class="card skill-group"><h3>Data & Development</h3><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">Machine Learning</span><span class="tag">Git</span><span class="tag">VS Code</span></article>
+        <article class="card skill-group"><h3>Cybersecurity</h3><span class="tag">Networking Fundamentals</span><span class="tag">Linux</span><span class="tag">Windows</span><span class="tag">Vulnerability Assessment</span><span class="tag">Web Security Basics</span><span class="tag">Penetration Testing Fundamentals</span></article>
+        <article class="card skill-group"><h3>Security tools</h3><span class="tag">Kali Linux</span><span class="tag">Nmap</span><span class="tag">Wireshark</span><span class="tag">Burp Suite</span><span class="tag">Metasploit</span><span class="tag">Nessus / OpenVAS</span></article>
+        <article class="card skill-group"><h3>Core concepts</h3><span class="tag">TCP/IP</span><span class="tag">DNS</span><span class="tag">HTTP/HTTPS</span><span class="tag">CIA Triad</span><span class="tag">OWASP Top 10</span></article>
+        <article class="card skill-group"><h3>Professional skills</h3><span class="tag">Problem Solving</span><span class="tag">Communication</span><span class="tag">Teamwork</span><span class="tag">Willingness to Learn</span></article>
+      </div>
+    </section>
+
+    <section class="wrap" id="projects">
+      <div class="section-head"><div class="eyebrow">Selected work</div><h2 class="section-title">Academic projects</h2><p class="section-desc">Projects completed during my computer science studies.</p></div>
+      <div class="grid">
+        <article class="card">
+          <h3>Early Diabetes Detection Using Machine Learning</h3>
+          <p>Built a machine-learning project using patient health attributes to estimate diabetes risk. Worked with data preprocessing, feature preparation, model training and evaluation using Python and Scikit-learn. Models explored included Logistic Regression, Decision Tree, Random Forest, KNN and SVM.</p>
+          <div class="tagrow"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">Machine Learning</span></div>
+        </article>
+        <article class="card">
+          <h3>Currency Recognition System Using AI</h3>
+          <p>Developed a currency recognition project using SSD and CNN approaches to classify currency images, considering front and back image samples. The project recorded approximately 96.6% average classification accuracy in its evaluation.</p>
+          <div class="tagrow"><span class="tag">AI</span><span class="tag">CNN</span><span class="tag">SSD</span><span class="tag">Image Classification</span></div>
+        </article>
+        <article class="card">
+          <h3>Smart Parking Management</h3>
+          <p>Created a web-based prototype to demonstrate parking-space management and a simple user interface for viewing and managing parking availability.</p>
+          <div class="tagrow"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="education">
+      <div class="section-head"><div class="eyebrow">Learning journey</div><h2 class="section-title">Education & training</h2></div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="meta">Currently pursuing</div><h3>ADCD Cybersecurity Course — Red Team Academy, Chennai</h3><p>Developing knowledge of cybersecurity concepts, networking, vulnerability assessment and security testing.</p></div>
+        <div class="timeline-item"><div class="meta">2023 – 2025</div><h3>Master of Computer Applications (MCA)</h3><p>ASAN Institute of Management. Secured first rank in the department with a medal and first-class distinction.</p></div>
+        <div class="timeline-item"><div class="meta">2020 – 2023</div><h3>B.Sc. Computer Science</h3><p>Sathyabama Institute of Science and Technology.</p></div>
+        <div class="timeline-item"><div class="meta">Certifications</div><h3>Python Full Stack Development & Web Designing</h3><p>Besant Technologies.</p></div>
+      </div>
+    </section>
+
+    <section class="wrap" id="contact">
+      <div class="contact-box">
+        <div><div class="eyebrow">Get in touch</div><h2 class="section-title">Let's connect.</h2><p>Open to entry-level opportunities, internships and learning opportunities in IT and cybersecurity.</p></div>
+        <div class="actions">
+          <a class="btn primary" href="mailto:vickynair162002@gmail.com">Email me</a>
+        </div>
+      </div>
+      <p class="section-desc" style="margin-top:14px;font-size:.9rem">Before publishing: verify every skill and project detail, add your preferred phone number if you want it public, and add a LinkedIn link only if your account becomes active again. Do not publish private information.</p>
+    </section>
+  </main>
+  <footer><div class="wrap">© <span id="year"></span> Vignesh R. Built with HTML, CSS and JavaScript.</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
